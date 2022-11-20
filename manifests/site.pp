@@ -29,6 +29,5 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { 'Hello Puppet!': }
-  include "role::${trusted['extensions']['pp_role']}"
   include profile::base
 }
