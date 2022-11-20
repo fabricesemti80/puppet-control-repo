@@ -1,4 +1,2 @@
 # An example role
-class role::example {
-
-}
+class role::example {}
