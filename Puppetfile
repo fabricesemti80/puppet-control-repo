@@ -31,3 +31,10 @@ mod 'puppetlabs-iis', '8.1.1'
 
 #* SQL server
 mod 'puppetlabs-sqlserver', '3.2.0'
+
+
+#* OS patching
+mod 'albatrossflavour-os_patching', '0.18.0'
+mod 'puppetlabs-scheduled_task', '3.1.1'
+mod 'puppetlabs-cron_core', '1.1.0'
+mod 'puppet-cron', '3.0.0'

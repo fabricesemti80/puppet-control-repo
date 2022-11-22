@@ -8,4 +8,5 @@ class profile::windows {
     ensure => 'running',
   }
   # include profile::fix_psgallery
+  include profile::patch_mgmt_win
 }
