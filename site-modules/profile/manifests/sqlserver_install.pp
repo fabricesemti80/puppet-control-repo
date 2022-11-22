@@ -1,5 +1,5 @@
 # This role would be made of all the profiles that need to be included to make a database server work
-class profile::sqlserver_installation (
+class profile::sqlserver_install (
   $instance_name = 'MSSQLSERVER',
   $windows_user = 'dbuser',
   $sapwd = 'sapassword123$',
