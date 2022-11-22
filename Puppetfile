@@ -17,18 +17,17 @@ forge 'https://forge.puppet.com'
 #  branch: 'docs_experiment'
 
 
-#* module
+#* generic
 mod 'puppetlabs-motd', '6.3.0'
 mod 'puppetlabs-registry', '4.1.1'
-
-mod 'puppetlabs-pwshlib', '0.10.2'
-mod 'puppetlabs-powershell', '5.2.0'
-
-mod 'puppetlabs-iis', '8.1.1'
-
-mod 'puppetlabs-sqlserver', '3.2.0'
-
 mod 'puppetlabs-stdlib', '8.5.0'
-
 mod 'puppetlabs-ruby_task_helper', '0.6.1'
 mod 'puppetlabs-chocolatey', '7.0.0'
+
+#* IIS
+mod 'puppetlabs-pwshlib', '0.10.2'
+mod 'puppetlabs-powershell', '5.2.0'
+mod 'puppetlabs-iis', '8.1.1'
+
+#* SQL server
+mod 'puppetlabs-sqlserver', '3.2.0'
