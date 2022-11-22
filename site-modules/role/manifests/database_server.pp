@@ -7,10 +7,10 @@ class role::database_server {
     content => "This is a Puppet-managed database server!\n",
   }
 
-  # install management studio
-  package { 'sql-server-management-studio':
-    ensure   => '15.0.18424.0',
-    provider => 'chocolatey',
-    source   => 'https://chocolatey.org/packages',
-  }
+  # # install management studio
+  # package { 'sql-server-management-studio':
+  #   ensure   => '15.0.18424.0',
+  #   provider => 'chocolatey',
+  #   source   => 'https://chocolatey.org/packages',
+  # }
 }
