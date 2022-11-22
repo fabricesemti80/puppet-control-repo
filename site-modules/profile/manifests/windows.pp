@@ -1,6 +1,7 @@
 # The Windows profile should be applied to all Windows nodes
 class profile::windows {
-  file { 'c:\\puppet-was-here.txt':
-    ensure => 'c:\\puppet-was-here.txt',
+  file { 'c:/puppet-was-here.txt':
+    ensure => 'file',
+    group  => 'Administrators',
   }
 }
