@@ -2,7 +2,7 @@
 # All roles should include the base profile
 class role::database_server {
   include profile::base
-  include profile::sqlserver_installation
+  include profile::sqlserver_install
   class { 'motd':
     content => "This is a Puppet-managed database server!\n",
   }
