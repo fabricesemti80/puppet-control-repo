@@ -9,7 +9,7 @@ class role::webserver {
   }
 
   # install IIS
-  $iis_features = ['Web-WebServer','Web-Scripting-Tools']
+  $iis_features = ['Web-WebServer','Web-Scripting-Tools','Web-Mgmt-Console']
 
   iis_feature { $iis_features:
     ensure => 'present',
