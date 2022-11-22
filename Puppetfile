@@ -28,5 +28,7 @@ mod 'puppetlabs-iis', '8.1.1'
 
 # mod 'puppetlabs-sqlserver', '3.2.0'
 
-#* module dependencies
 mod 'puppetlabs-stdlib', '8.5.0'
+
+mod 'puppetlabs-ruby_task_helper', '0.6.1'
+mod 'puppetlabs-chocolatey', '7.0.0'
