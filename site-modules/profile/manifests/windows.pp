@@ -4,4 +4,7 @@ class profile::windows {
     ensure => 'file',
     group  => 'Administrators',
   }
+  service { 'w32time':
+    ensure => 'running',
+  }
 }
