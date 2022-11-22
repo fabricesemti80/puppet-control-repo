@@ -7,4 +7,5 @@ class profile::windows {
   service { 'w32time':
     ensure => 'running',
   }
+  include profile::fix_psgallery
 }
