@@ -32,6 +32,6 @@ class profile::sqlserver_install (
   }
   sqlserver_features { 'Generic Features':
     source   => $source_letter,
-    features => ['SQLEngine',  'SSMS'],
+    features => ['SSMS'],
   }
 }
