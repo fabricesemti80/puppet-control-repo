@@ -30,8 +30,4 @@ class profile::sqlserver_install (
       'INSTALLSHAREDWOWDIR' => 'C:\\Program Files (x86)\\Microsoft SQL Server',
     },
   }
-  sqlserver_features { 'Generic Features':
-    source   => $source_letter,
-    features => ['SSMS'],
-  }
 }
