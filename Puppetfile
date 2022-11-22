@@ -26,7 +26,7 @@ mod 'puppetlabs-powershell', '5.2.0'
 
 mod 'puppetlabs-iis', '8.1.1'
 
-# mod 'puppetlabs-sqlserver', '3.2.0'
+mod 'puppetlabs-sqlserver', '3.2.0'
 
 mod 'puppetlabs-stdlib', '8.5.0'
 
