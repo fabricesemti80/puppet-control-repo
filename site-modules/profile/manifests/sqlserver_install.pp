@@ -28,6 +28,6 @@ class profile::sqlserver_install (
       'INSTANCEDIR'         => 'C:\\Program Files\\Microsoft SQL Server',
       'INSTALLSHAREDDIR'    => 'C:\\Program Files\\Microsoft SQL Server',
       'INSTALLSHAREDWOWDIR' => 'C:\\Program Files (x86)\\Microsoft SQL Server',
-    }
+    },
   }
 }
