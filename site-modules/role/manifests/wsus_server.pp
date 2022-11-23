@@ -10,4 +10,22 @@ class role::wsus_server {
   }
 
   # -- wsus code goes here --
+  #? https://github.com/TraGicCode/tragiccode-wsusserver/tree/bbd5e58ed61d40625bf5f50ef7701bc0f4b53338
+  class { 'wsusserver':
+    package_ensure         => 'present',
+    update_languages       => ['en'],
+    products               => [
+      'Active Directory Rights Management Services Client 2.0',
+      'ASP.NET Web Frameworks',
+      'Microsoft SQL Server 2012',
+      'SQL Server Feature Pack',
+      'SQL Server 2012 Product Updates for Setup',
+      'Windows Server 2016',
+    ],
+    update_classifications => [
+      'Critical Updates',
+      'Security Updates',
+      'Updates',
+    ],
+  }
 }
