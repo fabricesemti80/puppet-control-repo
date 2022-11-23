@@ -32,13 +32,16 @@ node default {
   #   class { 'my_class': }
   notify { 'Hello Puppet!': }
 }
-
-# ##? sample classification targeting a specific node
-# node 'linux-node.classroom.puppet.com' {
-#   notify { 'Hello Puppet!': }
-# }
-
-##? sample classification targeting a specific node
+##? node definitions
+# db servers
+node 'pet-srv-0.petsandbox.local' {
+  include role::database_server
+}
+# web servers
+node 'pet-srv-1.petsandbox.local' {
+  include role::web_server
+}
+# wsus servers
 node 'pet-srv-2.petsandbox.local' {
   include role::wsus_server
 }
