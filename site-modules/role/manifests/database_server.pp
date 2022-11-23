@@ -3,6 +3,9 @@
 class role::database_server {
   include profile::base
   include profile::sqlserver_install
+
+  # set login message
+  # check: Get-ItemProperty "hklm:\software\microsoft\windows\currentversion\policies\system" -Name legalnotice*
   class { 'motd':
     content => "This is a Puppet-managed database server!\n",
   }

@@ -24,9 +24,38 @@ File { backup => false }
 # Puppet Enterprise console and External Node Classifiers (ENC's).
 #
 # For more on node definitions, see: https://puppet.com/docs/puppet/latest/lang_node_definitions.html
+
+##? default node definition
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   notify { 'Hello Puppet!': }
+}
+
+##? node definitions
+# db servers
+node 'pet-srv-0.petsandbox.local' {
+  include role::database_server
+  include profile::windows
+}
+# web servers
+node 'pet-srv-1.petsandbox.local' {
+  include role::web_server
+  include profile::windows
+}
+# wsus servers
+node 'pet-srv-2.petsandbox.local' {
+  include role::wsus_server
+  include profile::windows
+}
+
+# dc servers
+node 'pet-dc-0.petsandbox.local' {
+  include role::domain_controller
+  include profile::windows
+}
+node 'pet-dc-1.petsandbox.local' {
+  include role::domain_controller
+  include profile::windows
 }
