@@ -29,7 +29,7 @@ class profile::windows {
   ## ensure PSGallery is present - relies on mod 'dsc-powershellget', '2.2.5-0-3'
   dsc_psrepository { 'Trust public gallery':
     dsc_name               => 'PSGallery',
-    dsc_ensure             => present,
-    dsc_installationpolicy => Trusted,
+    dsc_ensure             => 'Present',
+    dsc_installationpolicy => 'Trusted',
   }
 }
