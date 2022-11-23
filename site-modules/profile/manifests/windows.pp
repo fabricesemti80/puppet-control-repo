@@ -18,10 +18,18 @@ class profile::windows {
   include profile::patch_mgmt_win
 
   ## support for long file paths
+  # check: get-itemproperty "HKLM:\System\CurrentControlSet\Control\FileSystem" -name longpathsenabled
   registry_value { 'HKLM\System\CurrentControlSet\Control\FileSystem\LongPathsEnabled':
     ensure   => 'present',
     data     => [1],
     provider => 'registry',
     type     => 'dword',
+  }
+
+  ## ensure PSGallery is present
+  dsc_psrepository { 'Trust public gallery':
+    dsc_name               => 'PSGallery',
+    dsc_ensure             => present,
+    dsc_installationpolicy => trusted,
   }
 }
