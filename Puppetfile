@@ -24,6 +24,7 @@ mod 'puppetlabs-stdlib', '8.5.0'
 mod 'puppetlabs-ruby_task_helper', '0.6.1'
 mod 'puppetlabs-chocolatey', '7.0.0'
 mod 'puppet-windowsfeature', '4.0.0'
+mod 'dsc-powershellget', '2.2.5-0-3'
 
 #* IIS
 mod 'puppetlabs-pwshlib', '0.10.2'

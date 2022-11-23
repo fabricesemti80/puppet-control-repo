@@ -26,7 +26,7 @@ class profile::windows {
     type     => 'dword',
   }
 
-  ## ensure PSGallery is present
+  ## ensure PSGallery is present - relies on mod 'dsc-powershellget', '2.2.5-0-3'
   dsc_psrepository { 'Trust public gallery':
     dsc_name               => 'PSGallery',
     dsc_ensure             => present,
