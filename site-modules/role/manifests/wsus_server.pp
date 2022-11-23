@@ -11,21 +11,52 @@ class role::wsus_server {
 
   # -- wsus code goes here --
   #? https://github.com/TraGicCode/tragiccode-wsusserver/tree/bbd5e58ed61d40625bf5f50ef7701bc0f4b53338
-  class { 'wsusserver':
-    package_ensure         => 'present',
-    update_languages       => ['en'],
-    products               => [
-      'Active Directory Rights Management Services Client 2.0',
-      'ASP.NET Web Frameworks',
-      'Microsoft SQL Server 2012',
-      'SQL Server Feature Pack',
-      'SQL Server 2012 Product Updates for Setup',
-      'Windows Server 2016',
-    ],
-    update_classifications => [
-      'Critical Updates',
-      'Security Updates',
-      'Updates',
-    ],
+  # dsc_psrepository { 'Trust public gallery':
+  #   dsc_name               => 'PSGallery',
+  #   dsc_ensure             => present,
+  #   dsc_installationpolicy => trusted,
+  # }
+
+  ## WSUS needs IIS
+  # $iis_features = ['Web-Server','Web-WebServer','Web-Asp-Net45','Web-ISAPI-Ext','Web-ISAPI-Filter','NET-Framework-45-ASPNET','WAS-NET-Environment','Web-Http-Redirect','Web-Filtering','Web-Mgmt-Console','Web-Mgmt-Tools']
+  $iis_features =['UpdateServices']
+  windowsfeature { $iis_features:
+    ensure => present,
   }
 }
+
+## https://github.com/dsccommunity/UpdateServicesDsc/blob/main/examples/dsc_configuration.ps1
+#     {
+#         # Install the IIS role
+#         WindowsFeature UpdateServices
+#         {
+#             Ensure = 'Present'
+#             Name = 'UpdateServices'
+#         }
+
+#         WindowsFeature UpdateServicesRSAT
+#         {
+#             Ensure = 'Present'
+#             Name = 'UpdateServices-RSAT'
+#             IncludeAllSubFeature =  $True
+#         }
+#         UpdateServicesServer 'UpdateServices'
+#         {
+#             DependsOn = @(
+#                 '[WindowsFeature]UpdateServices'
+#             )
+#             Ensure = 'Present'
+#             ContentDir = 'C:\WSUS'
+#             Languages = @('en','fr')
+#             Classifications = @(
+#                 'E6CF1350-C01B-414D-A61F-263D14D133B4', #CriticalUpdates
+#                 'E0789628-CE08-4437-BE74-2495B842F43B', #DefinitionUpdates
+#                 '0FA1201D-4330-4FA8-8AE9-B877473B6441', #SecurityUpdates
+#                 '68C5B0A3-D1A6-4553-AE49-01D3A7827828', #ServicePacks
+#                 '28BC880E-0592-4CBF-8F95-C79B17911D5F' #UpdateRollUps
+#             )
+#             SynchronizeAutomatically = $true
+#             SynchronizeAutomaticallyTimeOfDay = '15:30:00'
+#             ClientTargetingMode = "Client"
+#         }
+#     }
