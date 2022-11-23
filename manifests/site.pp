@@ -36,12 +36,15 @@ node default {
 # db servers
 node 'pet-srv-0.petsandbox.local' {
   include role::database_server
+  include profile::windows
 }
 # web servers
 node 'pet-srv-1.petsandbox.local' {
   include role::web_server
+  include profile::windows
 }
 # wsus servers
 node 'pet-srv-2.petsandbox.local' {
   include role::wsus_server
+  include profile::windows
 }
