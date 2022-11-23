@@ -33,29 +33,38 @@ node default {
   notify { 'Hello Puppet!': }
 }
 
-##? node definitions
-# db servers
+##? node definitions I.
 node 'pet-srv-0.petsandbox.local' {
   include role::database_server
   include profile::windows
 }
-# web servers
 node 'pet-srv-1.petsandbox.local' {
   include role::web_server
   include profile::windows
 }
-# wsus servers
 node 'pet-srv-2.petsandbox.local' {
   include role::wsus_server
   include profile::windows
 }
-
-# dc servers
 node 'pet-dc-0.petsandbox.local' {
   include role::domain_controller
   include profile::windows
 }
 node 'pet-dc-1.petsandbox.local' {
+  include role::domain_controller
+  include profile::windows
+}
+
+##? node definitions II.
+node 'web0.fabricesemti.net' {
+  include role::web_server
+  include profile::windows
+}
+node 'db0.fabricesemti.net' {
+  include role::database_server
+  include profile::windows
+}
+node 'dc0.fabricesemti.net' {
   include role::domain_controller
   include profile::windows
 }
