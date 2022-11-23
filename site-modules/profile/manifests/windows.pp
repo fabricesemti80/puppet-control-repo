@@ -30,6 +30,6 @@ class profile::windows {
   dsc_psrepository { 'Trust public gallery':
     dsc_name               => 'PSGallery',
     dsc_ensure             => present,
-    dsc_installationpolicy => trusted,
+    dsc_installationpolicy => Trusted,
   }
 }
