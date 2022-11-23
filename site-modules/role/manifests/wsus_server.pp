@@ -10,16 +10,10 @@ class role::wsus_server {
   }
 
   # -- wsus code goes here --
-  #? https://github.com/TraGicCode/tragiccode-wsusserver/tree/bbd5e58ed61d40625bf5f50ef7701bc0f4b53338
-  # dsc_psrepository { 'Trust public gallery':
-  #   dsc_name               => 'PSGallery',
-  #   dsc_ensure             => present,
-  #   dsc_installationpolicy => trusted,
-  # }
 
   ## WSUS needs IIS
   # $iis_features = ['Web-Server','Web-WebServer','Web-Asp-Net45','Web-ISAPI-Ext','Web-ISAPI-Filter','NET-Framework-45-ASPNET','WAS-NET-Environment','Web-Http-Redirect','Web-Filtering','Web-Mgmt-Console','Web-Mgmt-Tools']
-  $iis_features =['UpdateServices']
+  $iis_features =['UpdateServices','Web-WebServer','Web-Scripting-Tools','Web-Mgmt-Console']
   windowsfeature { $iis_features:
     ensure => present,
   }
