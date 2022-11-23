@@ -5,14 +5,18 @@ class profile::windows {
     ensure => 'file',
     group  => 'Administrators',
   }
+
   ## ensure time service is running - demonstration purposed mainly
   service { 'w32time':
     ensure => 'running',
   }
+
   # ## fix PS gallery
   # include profile::fix_psgallery
+
   ## patch managemenet
   include profile::patch_mgmt_win
+
   ## support for long file paths
   registry_value { 'HKLM\System\CurrentControlSet\Control\FileSystem\LongPathsEnabled':
     ensure   => 'present',

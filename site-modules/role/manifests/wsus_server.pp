@@ -4,6 +4,7 @@ class role::wsus_server {
   include profile::base
 
   # set login message
+  # check: Get-ItemProperty "hklm:\software\microsoft\windows\currentversion\policies\system" -Name legalnotice*
   class { 'motd':
     content => "This is a Puppet-managed WSUS server!\n",
   }

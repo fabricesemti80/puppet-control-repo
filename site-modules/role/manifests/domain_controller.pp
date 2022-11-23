@@ -2,7 +2,12 @@
 # All roles should include the base profile
 class role::domain_controller {
   include profile::base
+
+  # set login message
+  # check: Get-ItemProperty "hklm:\software\microsoft\windows\currentversion\policies\system" -Name legalnotice*
   class { 'motd':
     content => "This is a Puppet-managed domain controller!\n",
   }
+
+  # -- dc code goes here --
 }
