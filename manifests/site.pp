@@ -37,3 +37,8 @@ node default {
 # node 'linux-node.classroom.puppet.com' {
 #   notify { 'Hello Puppet!': }
 # }
+
+##? sample classification targeting a specific node
+node 'pet-srv-2.petsandbox.local' {
+  include role::wsus_server
+}
