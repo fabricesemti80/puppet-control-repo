@@ -46,11 +46,7 @@ node 'pet-srv-2.petsandbox.local' {
   include role::wsus_server
   include profile::windows
 }
-node 'pet-dc-0.petsandbox.local' {
-  include role::domain_controller
-  include profile::windows
-}
-node 'pet-dc-1.petsandbox.local' {
+node 'pet-dc-0.petsandbox.local','pet-dc-1.petsandbox.local' {
   include role::domain_controller
   include profile::windows
 }
