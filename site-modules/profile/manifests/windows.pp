@@ -26,6 +26,14 @@ class profile::windows {
     type     => 'dword',
   }
 
+  ## disable admin center popuppp
+  registry_value { 'HKLM\SOFTWARE\Microsoft\ServerManager\DoNotPopWACConsoleAtSMLaunch':
+    ensure   => 'present',
+    data     => [1],
+    provider => 'registry',
+    type     => 'dword',
+  }
+
   ## ensure PSGallery is present - relies on mod 'dsc-powershellget', '2.2.5-0-3'
   dsc_psrepository { 'Trust public gallery':
     dsc_name               => 'PSGallery',
