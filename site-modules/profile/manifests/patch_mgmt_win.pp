@@ -3,5 +3,8 @@ class profile::patch_mgmt_win (
 ) {
   include os_patching
 
-  include patching_as_code
+  class {'patching_as_code':
+    classify_pe_patch => true,
+    patch_choco       => true
+  }
 }
