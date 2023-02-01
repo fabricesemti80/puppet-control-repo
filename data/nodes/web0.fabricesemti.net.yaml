@@ -1,1 +1,5 @@
 ---
+#  patch this server in the second batch
+patching_as_code::patch_group:
+  - primary
+  - secondary
