@@ -41,4 +41,7 @@ mod 'puppetlabs-scheduled_task', '3.1.1'
 mod 'puppetlabs-cron_core', '1.1.0'
 mod 'puppet-cron', '3.0.0'
 mod 'dsc-updateservicesdsc', '1.2.1-0-5'
+
 mod 'puppetlabs-patching_as_code', '1.1.7'
+mod 'puppetlabs-puppet_agent', '4.12.1'
+mod 'puppetlabs-reboot', '4.3.0'
