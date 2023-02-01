@@ -46,3 +46,7 @@ node 'dc0.fabricesemti.net' {
   include role::domain_controller
   include profile::windows
 }
+node 'wsus0.fabricesemti.net' {
+  include role::wsus_server
+  include profile::windows
+}
