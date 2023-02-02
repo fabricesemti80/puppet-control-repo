@@ -1,6 +1,7 @@
 ---
-
 #  patch this server early
+#? https://forge.puppet.com/modules/puppetlabs/patching_as_code/readme
+
 patching_as_code::patch_group:
   - testing
   - early

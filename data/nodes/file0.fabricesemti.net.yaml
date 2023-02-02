@@ -1,5 +1,6 @@
 ---
 #  patch this server in the second batch
+#? https://forge.puppet.com/modules/puppetlabs/patching_as_code/readme
+
 patching_as_code::patch_group:
-  - primary
-  - secondary
+  - always
