@@ -1,1 +1,6 @@
 ---
+
+patching_as_code::high_priority_patch_group: always
+patching_as_code::high_priority_list:
+  - KB4052623
+  - KB2267602
